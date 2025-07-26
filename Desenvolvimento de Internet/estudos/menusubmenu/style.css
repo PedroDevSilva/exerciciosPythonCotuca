@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+}
+.top-header {
+    background-color: antiquewhite;
+}
+
+.top-header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header .logotipo img {
+    max-width: 140px;
+}
+
+.bottom-header {
+    background-color: rgb(255, 255, 255);
+}
+
+.bottom-header nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-header nav ul li a {
+    color: black;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: .2s;
+}
+
+.bottom-header nav ul li a:hover {
+    background-color: black;
+    color: white;
+    box-shadow: inset 0 0 8px rgb(77, 77, 77);
+}
+
+.drop-hover {
+    position: relative;
+}
+
+.drop-hover .drop {
+    position: absolute;
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition-duration: .5s;
+}
+
+.drop-hover .drop a {
+    padding: 20px;
+}
+
+.drop-hover:hover .drop {
+    height: auto;
+}

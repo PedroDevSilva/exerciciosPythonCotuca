@@ -1,0 +1,13 @@
+print("Calcularei a área em cm quadrados de um círculo")
+try:
+    r=float(input("Digite a medida em cm quadrados do raio do seu círculo: "))
+except ValueError:
+    print("Digite apenas números")
+else:
+    if r<=0:
+        print("Utilize números positivos")
+    else:
+        a=3.1415*(r*r)
+        print(f"A área do seu círculo é de '{a}' centímetros quadrados")
+input("Pressione enter para finalizar o programa")
+print("Programa finalizado com sucesso")

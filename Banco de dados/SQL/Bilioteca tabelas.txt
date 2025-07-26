@@ -1,0 +1,131 @@
+--CRIANDO TABELAS
+create table ct_ESTADO (
+	id char(2) not null,
+	nome varchar(30) not null
+)
+alter table ct_ESTADO
+	add constraint pk_ct_ESTADO primary key (id)
+
+create table ct_CIDADE (
+	id int identity not null,
+	nome varchar(30) not null,
+	uf char(2) not null
+	
+	constraint pk_ct_CIDADE primary key (id),
+	constraint fk_ct_CIDADE_ct_ESTADO foreign key (uf) references ct_ESTADO (id)
+)
+
+create table ct_AUTOR (
+	id int identity not null,
+	nome varchar(30)
+
+	constraint pk_ct_AUTOR primary key (id),
+)
+
+alter table ct_AUTOR 
+	alter column nome varchar(30) not null
+	
+
+create table ct_EDITORA (
+	id int identity not null,
+	nome varchar(30) not null,
+
+	constraint pk_ct_EDITORA primary key (id)
+)
+
+create table ct_CLIENTE (
+	id int identity not null,
+	nome varchar(30) not null,
+	endereco varchar(50) not null,
+	idcidade int not null,
+	idestado char(2) not null,
+
+	constraint pk_ct_CLIENTE primary key (id),
+	constraint fk_ct_CLIENTE_ct_CIDADE foreign key (idcidade) references ct_CIDADE,
+	constraint fk_ct_CLIENTE_ct_ESTADO foreign key (idestado) references ct_ESTADO
+)
+
+create table ct_LIVRO (
+	nrtombo int not null,
+	nome varchar(30) not null,
+	idautor int not null,
+	ideditora int not null,
+
+	constraint pk_ct_LIVRO primary key (nrtombo),
+	constraint fk_ct_LIVRO_ct_AUTOR foreign key (idautor) references ct_AUTOR,
+	constraint fk_ct_LIVRO_ct_EDITORA foreign key (ideditora) references ct_EDITORA,
+)
+
+--EXCLUINDO IDAUTOR DA TABELA LIVRO
+
+alter table ct_LIVRO
+	drop fk_ct_LIVRO_ct_AUTOR
+
+--EXCLUIR CAMPO ID DA TABELA ESTADO; INCLUIR CAMPO SIGLA COMO CHAR(2) (PK)
+
+alter table ct_CIDADE
+	drop fk_ct_CIDADE_ct_ESTADO
+
+alter table ct_CLIENTE
+	drop fk_ct_CLIENTE_ct_ESTADO 
+
+alter table ct_ESTADO 
+	drop pk_ct_ESTADO
+
+
+alter table ct_ESTADO
+	add uf char(2) not null,
+		constraint pk_ct_ESTADO primary key (uf)
+
+--CRIANDO TABELA
+
+create table ct_AUTORESDOLIVRO (
+	nrtombo int not null,
+	idautor int not null,
+
+	constraint pk_ct_adl primary key (nrtombo, idautor),
+	constraint fk_ct_AUTORESDOLIVRO_ct_LIVRO foreign key (nrtombo) references ct_LIVRO,
+	constraint fk_ct_AUTORESDOLIVRO_ct_AUTOR foreign key (idautor)references ct_AUTOR,
+)
+
+--ALTERANDO CAMPO NOME DA TABELA LIVRO PARA 40
+
+alter table ct_LIVRO
+	alter column nome varchar(40) not null
+
+--ADICIONAR CAMPO EMAIL VARCHAR(40) NA CLIENTE
+
+alter table ct_CLIENTE
+	add email varchar(40) not null
+
+--CRIANDO TABELA
+
+create table ct_LIVROSLOCADOS (
+	nrtombo int not null,
+	idcliente int not null,
+	datalocacao smalldatetime not null,
+	datadevolucaoprevista smalldatetime not null,
+	datadevolucaoreal smalldatetime not null,
+
+	constraint fk_ct_LIVROSLOCADOS_ct_LIVRO foreign key (nrtombo) references ct_LIVRO,
+	constraint fk_ct_LIVROSLOCADOS_ct_CLIENTE foreign key (idcliente) references ct_CLIENTE
+)
+
+--EXCLUINDO AS TABELAS
+
+drop table ct_ESTADO
+
+drop table ct_LIVROSLOCADOS
+
+drop table ct_CLIENTE
+
+drop table ct_CIDADE
+
+drop table ct_AUTORESDOLIVRO
+
+drop table ct_LIVRO
+
+drop table ct_EDITORA
+
+drop table ct_AUTOR
+

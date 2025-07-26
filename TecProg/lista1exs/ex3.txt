@@ -1,0 +1,17 @@
+print("Digite os graus Celsius atuais e converterei para graus Kelvin!")
+try:
+    c=float(input("Digite a temperatura!: "))
+except ValueError:
+    print ("Utilize apenas números por gentileza")
+    input("Pressione enter para encerrar o programa")
+    print("\a")
+else:
+    if c<-273.15:
+        print("O valor deve ser maior que o zero absoluto (em graus celsius)")
+        input("Pressione enter para encerrar o programa")
+        print("\a")
+    else:
+        k=c+273.15
+        print ("A temperatura em graus Kelvin é:",k)
+        input("Pressione enter para encerrar o programa")
+        print("\a")

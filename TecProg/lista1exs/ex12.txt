@@ -1,0 +1,19 @@
+#Rankine PARA Kelvin
+print("Transformarei graus Rankine em graus Kelvin")
+try:
+    r=float(input("Digite a temperatura em graus rankine: "))
+except ValueError:
+    print("Utilize apenas números")
+    input("Pressione enter para finalizar o programa")
+    print("\a")
+else:
+    if r<0:
+        print("A temperatura deve ser maior que zero absoluto em rankine")
+        input("Pressione enter para finalizar o programar")
+        print("\a")
+    else:
+        c = (r - 491.67) / 1.8
+        k = c + 273.15
+        print(r,"graus rankine equivalem à",k,"graus kelvin")
+        input("Pressione enter para finalizar o programa")
+        print("\a")

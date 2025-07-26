@@ -1,0 +1,13 @@
+print("Calcularei a área de um quadrado")
+try:
+    l=float(input("Digite a medida dos lados do quadrado em cm: "))
+except ValueError:
+    print("Utilize apenas números")
+else:
+    if l<=0:
+        print("Utilize um valor maior que zero")
+    else:
+        a = l * l
+        print("A área do quadrado é de",a,"centímetros quadrados")
+input("\nPressione enter para finalizar o programa")
+print("\nPrograma finalizado com sucesso! ")

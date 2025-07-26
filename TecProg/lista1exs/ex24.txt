@@ -1,0 +1,34 @@
+print("Calcularei a área em centímetros quadrados de um polígono regular")
+try:
+    Q=int(input("Digite a quantidade exata de lados do seu polígono: "))
+except ValueError:
+    print("Utilize apenas números inteiros")
+else:
+    if Q<=2:
+        print("Nao poder haver um polígono regular com menos de tres lados")
+    else:
+        try:
+            B=float(input("Digite agora a medida em centímetros da sua base: "))
+        except ValueError:
+            print("Utilize apenas números")
+        else:
+            if B<=0:
+                print("Utilize uma medida positiva")
+            else:
+                try:
+                    A=float(input("Digite agora a medida da apotema: "))
+                except ValueError:
+                    print("Digite apenas números")
+                else:
+                    if A>(B/2) or A<0:
+                        print("A apotema sempre é menor que metade da base do polígono")
+                    else:
+                        if A==B/2 and Q==4:
+                            print("Geralmente a apotema é menor que metade da base do polígono, mas como sua apotema é a mesma medida que metade da base, seu polígono regular é um quadrado! ")
+                            a = (Q * B * A) / 2
+                            print(f"Portanto, a área do seu polígono regular é de {a} centímetros quadrados")
+                        else:
+                            a = (Q * B * A) / 2
+                            print(f"A área do seu polígono regular é de '{a}' centímetros quadrados")
+input("Pressione enter para finalizar o programa")
+print("Programa finalizado com sucesso")

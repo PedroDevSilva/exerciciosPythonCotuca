@@ -1,0 +1,229 @@
+/***********************
+BANCO DE DADOS
+CAMPEONATO ENTRE TIMES
+NOME: Pedro Felipe Araujo Silva
+RA: 25529
+DATA: 28/05/25
+***********************/
+
+--1,2
+
+CREATE TABLE atv_cidade (
+	id int identity not null,
+	nome varchar(20) not null,
+
+	constraint pk_cidade primary key (id)
+)
+select * from atv_time
+
+CREATE TABLE atv_time (
+	id int identity not null,
+	nome varchar(20) not null,
+	idCidade int not null
+	
+	constraint pk_time primary key (id),
+	constraint fk_time_cidade foreign key (idCidade)
+		references atv_cidade (id)
+)
+
+alter table atv_time 
+	add estado char(2) not null,
+	    data smalldatetime not null
+
+create table atv_jogador (
+	id int identity not null,
+	nome varchar(20) not null
+
+	constraint pk_jogador primary key(id)
+)
+
+create table atv_tecnico (
+	id int identity not null,
+	nome varchar(20) not null
+
+	constraint pk_tecnico primary key(id)
+)
+
+--3
+
+alter table atv_jogador
+	add numero int not null
+
+--4
+
+alter table atv_tecnico
+	alter column nome varchar(40) not null
+
+--5
+
+create table atv_estado (
+	id int identity not null,
+	nome varchar(20) not null
+)
+
+alter table atv_estado 
+	add constraint pk_estado primary key(id)
+
+alter table atv_estado 
+	alter column id char(2) not null
+
+alter table atv_time
+	drop column estado
+
+alter table atv_time
+	add idEstado char(2) not null
+
+select*from atv_estado
+
+alter table atv_time
+	add constraint fk_time_estado foreign key (idEstado)
+		references atv_estado (id)
+
+--criei um problema resolvendo abaixo::::::::::::::
+drop table atv_estado
+
+create table atv_estado (
+	id char(2) NOT NULL,
+	nome varchar(20) NOT NULL,
+	constraint pk_estado primary key(id)
+)
+alter table atv_time drop column idEstado
+
+alter table atv_time
+	add idEstado char(2) not null
+
+alter table atv_time
+	add constraint fk_time_estado foreign key (idEstado)
+	references atv_estado (id)
+--- pronto :D
+
+--6
+
+alter table atv_cidade
+	add idEstado int not null
+
+alter table atv_cidade
+	alter column idEstado char(2) not null
+
+alter table atv_cidade
+	add constraint fk_cidade_estado foreign key (idEstado)
+	references atv_estado(id)
+
+alter table atv_time 
+	drop constraint fk_time_estado
+
+alter table atv_time
+	drop column idEstado
+
+--7
+
+alter table atv_time
+	alter column idCidade int not null
+
+alter table atv_time
+	add constraint fk_time_cidade foreign key (idCidade)
+		references atv_cidade(id)
+
+--8,9
+
+create table campeonato (
+	id int identity not null,
+	nome varchar(30) not null,
+	dataInicio smalldatetime not null,
+	dataFim smalldatetime not null
+)
+
+exec sp_rename 'campeonato','atv_campeonato'
+
+alter table atv_campeonato
+	add constraint pk_campeonato primary key(id)
+
+--10
+
+create table campeonato_jogador (
+	idCampeonato int not null,
+	idJogador int not null
+
+	constraint fk_campeonato_idJogador foreign key (idJogador) references atv_jogador(id),
+	constraint fk_campeonato_idCampeonato foreign key (idCampeonato) references atv_campeonato(id)
+)
+
+--11
+
+alter table campeonato_jogador
+	drop constraint fk_campeonato_idJogador
+alter table campeonato_jogador
+	drop constraint fk_campeonato_idCampeonato
+
+drop table campeonato_jogador
+
+--12
+
+create table atv_time_jogador (
+	idTime int not null,
+	idJogador int not null
+
+	constraint pk_time_jogador primary key(idTime,idJogador),
+	constraint fk_time_jogador_time foreign key (idTime) references atv_time(id),
+	constraint fk_time_jogador_jogador foreign key (idJogador) references atv_jogador(id)
+)
+
+--13
+
+create table atv_campeonato_time (
+	idCampeonato int not null,
+	idTime int not null
+
+	constraint pk_campeonato_time primary key(idCampeonato,idTime),
+	constraint fk_campeonato_time_campeonato foreign key(idCampeonato) references atv_campeonato(id),
+	constraint fk_campeonato_time_time foreign key(idTime) references atv_time(id)
+)
+
+--14
+
+alter table atv_time
+	drop column data
+
+--15
+alter table atv_cidade 
+	drop constraint fk_cidade_estado
+
+drop table atv_estado
+
+--16
+
+alter table atv_time
+	add idTecnico int not null
+
+--17
+
+alter table atv_campeonato_time
+	drop constraint fk_campeonato_time_campeonato
+
+alter table atv_campeonato_time
+	drop constraint fk_campeonato_time_time
+
+alter table atv_campeonato_time
+	drop constraint pk_campeonato_time
+
+drop table atv_campeonato
+
+--18
+
+alter table atv_time_jogador drop constraint fk_time_jogador_jogador
+alter table atv_time_jogador drop constraint fk_time_jogador_time
+alter table atv_time_jogador drop constraint pk_time_jogador
+
+drop table atv_time_jogador
+
+drop table atv_tecnico
+drop table atv_jogador
+
+alter table atv_time drop constraint fk_time_cidade
+
+drop table atv_time
+drop table atv_cidade
+drop table atv_campeonato_time
+
+
+

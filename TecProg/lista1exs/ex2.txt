@@ -1,0 +1,17 @@
+print("Digite os graus em Fahrenheit atuais e converterei para graus Celsius!")
+try:
+    f = float(input("Digite a temperatura: "))
+except ValueError:
+    print("Por gentileza, utilize apenas números.")
+    input("Pressione enter para encerrar o programa")
+    print("\a")
+else:
+    if f<-459.67:
+        print("A temperatura deve ser maior que o zero absoluto (em graus farenheit)")
+        input("Pressione enter para encerrar o programa")
+        print("\a")
+    else:
+        c=5/9*(f-32)
+        print ("A temperatura em graus Celsius é:",c)
+        input("Pressione enter para encerrar o programa")
+        print("\a")

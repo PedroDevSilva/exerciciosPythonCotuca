@@ -1,0 +1,251 @@
+/***********************
+BANCO DE DADOS
+CAMPEONATO ENTRE TIMES SQL DML
+NOME: Pedro Felipe Araujo Silva
+RA: 25529
+DATA: 28/05/25
+***********************/
+
+-- DROP DAS TABELAS (ordem correta por causa das FK)
+DROP TABLE IF EXISTS atv_campeonato_time;
+DROP TABLE IF EXISTS atv_time_jogador;
+DROP TABLE IF EXISTS campeonato_jogador;
+DROP TABLE IF EXISTS atv_campeonato;
+DROP TABLE IF EXISTS atv_time;
+DROP TABLE IF EXISTS atv_cidade;
+DROP TABLE IF EXISTS atv_estado;
+DROP TABLE IF EXISTS atv_tecnico;
+DROP TABLE IF EXISTS atv_jogador;
+
+--CRIANDO TABELAS A SEREM USADAS
+CREATE TABLE atv_estado (
+	id INT IDENTITY PRIMARY KEY,
+	nome VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE atv_cidade (
+	id INT IDENTITY PRIMARY KEY,
+	nome VARCHAR(20) NOT NULL,
+	idEstado INT NOT NULL,
+	CONSTRAINT fk_cidade_estado FOREIGN KEY (idEstado) REFERENCES atv_estado(id)
+);
+
+CREATE TABLE atv_tecnico (
+	id INT IDENTITY PRIMARY KEY,
+	nome VARCHAR(40) NOT NULL
+);
+
+CREATE TABLE atv_time (
+	id INT IDENTITY PRIMARY KEY,
+	nome VARCHAR(20) NOT NULL,
+	idCidade INT NOT NULL,
+	idTecnico INT,
+	CONSTRAINT fk_time_cidade FOREIGN KEY (idCidade) REFERENCES atv_cidade(id),
+	CONSTRAINT fk_time_tecnico FOREIGN KEY (idTecnico) REFERENCES atv_tecnico(id)
+);
+
+CREATE TABLE atv_jogador (
+	id INT IDENTITY PRIMARY KEY,
+	nome VARCHAR(20) NOT NULL,
+	numero INT NOT NULL
+);
+
+CREATE TABLE atv_campeonato (
+	id INT IDENTITY PRIMARY KEY,
+	nome VARCHAR(30) NOT NULL,
+	dataInicio SMALLDATETIME NOT NULL,
+	dataFim SMALLDATETIME NOT NULL
+);
+
+CREATE TABLE campeonato_jogador (
+	idCampeonato INT NOT NULL,
+	idJogador INT NOT NULL,
+	CONSTRAINT fk_campeonato_idCampeonato FOREIGN KEY (idCampeonato) REFERENCES atv_campeonato(id),
+	CONSTRAINT fk_campeonato_idJogador FOREIGN KEY (idJogador) REFERENCES atv_jogador(id)
+);
+
+CREATE TABLE atv_time_jogador (
+	idTime INT NOT NULL,
+	idJogador INT NOT NULL,
+	CONSTRAINT pk_time_jogador PRIMARY KEY(idTime, idJogador),
+	CONSTRAINT fk_time_jogador_time FOREIGN KEY (idTime) REFERENCES atv_time(id),
+	CONSTRAINT fk_time_jogador_jogador FOREIGN KEY (idJogador) REFERENCES atv_jogador(id)
+);
+
+CREATE TABLE atv_campeonato_time (
+	idCampeonato INT NOT NULL,
+	idTime INT NOT NULL,
+	CONSTRAINT pk_campeonato_time PRIMARY KEY(idCampeonato, idTime),
+	CONSTRAINT fk_campeonato_time_campeonato FOREIGN KEY(idCampeonato) REFERENCES atv_campeonato(id),
+	CONSTRAINT fk_campeonato_time_time FOREIGN KEY(idTime) REFERENCES atv_time(id)
+);
+
+--COMEÇANDO EXERCÍCIO
+
+--1.7.
+
+INSERT INTO atv_estado (nome)
+	VALUES ('São Paulo'),('Minas Gerais'),('Rio de Janeiro'),('Espírito Santo'),('Acre'),('Alagoas'),('Amapá'),('Amazonas'),('Bahia'),('Ceará'),('Distrito Federal'),('Goiás'),('Maranhão'),('Mato Grosso'),('Mato Grosso do Sul'),('Paraná'),('Paraíba'),('Pernambuco'),('Piauí'),('Rio Grande do Norte'),('Rio Grande do Sul'),('Rondonia'),('Roraima'),('Santa Catarina'),('Sergipe'),('Tocantins');
+
+--2.
+
+SELECT * FROM atv_estado;
+
+--3.
+
+INSERT INTO atv_estado(nome)
+	VALUES ('Pará')
+
+INSERT INTO atv_cidade (nome,idEstado)
+	VALUES ('Campinas',1),('Valinhos',1),('Indaiatuba',1),('Belo Horizonte',2),('Niteroi',3),('Petropolis',3),('Vitoria',4),('Vila Velha',4),('Recife',18),('Belém',27),('Curitiba',16),('Cuiabá',14),('Aracaju',25),('Palmas',26);
+
+--4.
+
+select c.nome as 'Nome Cidade', 
+	   e.nome as 'Nome Estado'
+	from atv_cidade c, atv_estado e 
+	
+--5.
+
+SELECT * FROM atv_cidade
+
+--6.
+
+SELECT * FROM atv_cidade
+   WHERE idEstado IN (
+		   SELECT id FROM atv_estado
+			 WHERE nome='São Paulo')
+
+--8.
+
+select c.nome as 'Nome Cidade', 
+	   e.nome as 'Nome Estado'
+	from atv_cidade c, atv_estado e 
+
+--9.
+
+alter table atv_cidade 
+	drop constraint fk_cidade_estado
+
+delete from atv_estado
+	where nome='Pará'
+
+select * from atv_estado
+
+--10.
+
+select * from atv_cidade
+
+delete from atv_cidade 
+	where idEstado=3
+
+--11.
+
+update atv_estado
+	set nome = 'Estados do Brasil'
+
+--12.
+
+select c.nome as 'Nome Cidade', 
+	   e.nome as 'Nome Estado'
+	from atv_cidade c, atv_estado e 
+
+--13.
+
+INSERT INTO atv_tecnico(nome)
+	VALUES ('Luis Zubeldía'),('Abel Ferreira'),('António Oliveira'),('Tite'),('Ramón Diaz'),('Artur Jorge');
+
+--14.15.
+
+select * from atv_cidade
+select * from atv_tecnico
+
+INSERT INTO atv_time(nome,idCidade,idTecnico)
+	VALUES ('São Paulo',1,1),('Palmeiras',1,2),('Corinthians',1,4),('Botafogo',3,6),('Vasco',3,5)
+
+--16.
+INSERT INTO atv_jogador (nome, numero) VALUES
+-- Time 1
+('João', 1), ('Carlos', 2), ('Rafael', 3), ('Diego', 4), ('Lucas', 5), ('Felipe', 6),
+-- Time 2
+('Mateus', 1), ('Bruno', 2), ('Igor', 3), ('André', 4), ('Gustavo', 5), ('Henrique', 6),
+-- Time 3
+('Pedro', 1), ('Caio', 2), ('Thiago', 3), ('Samuel', 4), ('Eduardo', 5), ('Fernando', 6),
+-- Time 4
+('Vitor', 1), ('Danilo', 2), ('Marcos', 3), ('Alex', 4), ('Jorge', 5), ('Leandro', 6),
+-- Time 5
+('Brayan', 1), ('Renan', 2), ('Otávio', 3), ('Nicolas', 4), ('Heitor', 5), ('Yuri', 6);
+
+-- Time 1 → Jogadores 1 a 6
+INSERT INTO atv_time_jogador (idTime, idJogador) VALUES
+(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6);
+
+-- Time 2 → Jogadores 7 a 12
+INSERT INTO atv_time_jogador (idTime, idJogador) VALUES
+(2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (2, 12);
+
+-- Time 3 → Jogadores 13 a 18
+INSERT INTO atv_time_jogador (idTime, idJogador) VALUES
+(3, 13), (3, 14), (3, 15), (3, 16), (3, 17), (3, 18);
+
+-- Time 4 → Jogadores 19 a 24
+INSERT INTO atv_time_jogador (idTime, idJogador) VALUES
+(4, 19), (4, 20), (4, 21), (4, 22), (4, 23), (4, 24);
+
+-- Time 5 → Jogadores 25 a 30
+INSERT INTO atv_time_jogador (idTime, idJogador) VALUES
+(5, 25), (5, 26), (5, 27), (5, 28), (5, 29), (5, 30);
+
+--17.
+ALTER TABLE atv_campeonato
+ALTER COLUMN dataInicio smalldatetime;
+
+ALTER TABLE atv_campeonato
+ALTER COLUMN dataFim smalldatetime;
+
+SET LANGUAGE us_english;
+
+INSERT INTO atv_campeonato (nome, dataInicio, dataFim)
+VALUES ('Brasileiro 2024', '2024-05-10', '2024-08-30');
+
+select* from atv_campeonato
+
+delete from atv_campeonato
+	where id=8
+
+--18.
+
+INSERT INTO atv_campeonato(nome, dataInicio, dataFim)
+VALUES ('Camp. Paulista 2024', '2024-09-10', '2024-11-15');
+
+--19.
+
+INSERT INTO atv_campeonato_time(idCampeonato, idTime)
+VALUES 
+(7, 1), (7, 2), (7, 3),
+(9, 1), (9, 4), (9, 5);
+
+--20.
+
+ALTER TABLE atv_jogador
+	ADD idTime INT;
+	
+ALTER TABLE atv_jogador
+ADD CONSTRAINT fk_jogador_time
+FOREIGN KEY (idTime) REFERENCES atv_time(id);
+
+select * from atv_jogador
+
+SELECT * FROM atv_jogador
+   WHERE nome IN (
+		   SELECT id FROM atv_time
+			 WHERE nome='São Paulo')
+
+--25.
+
+SELECT j.nome AS Jogador, t.nome AS Time
+FROM atv_jogador j
+JOIN atv_time t ON j.idTime = t.id
+JOIN atv_campeonato_time ct ON t.id = ct.idTime
+JOIN atv_campeonato c ON ct.idCampeonato = c.id
+WHERE c.nome = 'Camp. Paulista 2024';

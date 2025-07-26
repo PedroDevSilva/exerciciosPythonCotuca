@@ -1,0 +1,130 @@
+✅ O que você já tem:
+Leitura de arquivo → OK
+
+Montagem da matriz aumentada → OK
+
+Começo da verificação de proporcionalidade → Incompleto
+
+Função para transformar o pivô em 1 → OK
+
+Esboço da função para trocar linhas se necessário → Rascunho
+
+🧠 DICAS DETALHADAS DO QUE FALTA
+1. 🔎 Verificação de proporcionalidade entre linhas
+Por que fazer:
+Linhas proporcionais significam que uma equação é múltiplo exato da outra — isso pode indicar infinitas soluções ou nenhuma.
+
+O que pensar:
+
+Compare todos os pares de linhas (linha 1 com 2, linha 1 com 3, linha 2 com 3…).
+
+Veja se os coeficientes (ignorando o termo independente) têm proporções constantes.
+
+Se os valores aumentam todos pela mesma razão (ex: 2, 4, 6 e 1, 2, 3), elas são proporcionais.
+
+Cuidado com divisão por zero (nunca divida por zero).
+
+Dica prática:
+
+Pode usar o conceito de "razão constante" entre os mesmos índices de duas linhas.
+
+2. 🔁 Evitar zeros na diagonal principal
+Por que fazer:
+O elemento da diagonal precisa ser ≠ 0 para que você possa dividir por ele e torná-lo 1.
+
+O que pensar:
+
+Sempre que estiver prestes a dividir por um valor da diagonal, verifique se ele é 0.
+
+Se for, procure outra linha abaixo que tenha um número ≠ 0 nessa mesma coluna.
+
+Troque as linhas antes de seguir.
+
+Dica prática:
+
+Teste o sistema antes de aplicar Gauss: “A primeira linha começa com 0? Sim? Troque com uma que comece com número ≠ 0.”
+
+3. 🔃 Zerar os elementos abaixo da diagonal
+Por que fazer:
+Essa etapa transforma a matriz em forma triangular superior, que é essencial para encontrar a solução.
+
+O que pensar:
+
+Pegue a linha atual (linha pivô) e subtraia múltiplos dela das linhas abaixo.
+
+O múltiplo deve ser o número que você quer zerar (com sinal trocado).
+
+Isso faz com que todos os elementos abaixo do pivô na mesma coluna virem 0.
+
+Dica prática:
+
+Pense como: “Se a linha de cima tem 1 no começo e a de baixo tem 2, então tiro 2×linha de cima da linha de baixo.”
+
+4. 🔁 Zerar os elementos acima da diagonal (Gauss-Jordan)
+Por que fazer:
+Se quiser resolver com eliminação completa (Gauss-Jordan), precisa também zerar os elementos acima da diagonal, além dos de baixo.
+
+O que pensar:
+
+A lógica é a mesma do passo anterior, mas agora você vai de baixo para cima.
+
+Isso deixa a matriz na forma da identidade, com os resultados prontos na última coluna.
+
+Dica prática:
+
+Imagine ir "voltando", limpando os valores acima dos pivôs até que cada linha tenha um único 1.
+
+5. ✅ Transformar o pivô em 1 (você já faz isso!)
+Só lembrar:
+
+Sempre normalize a linha antes de usar ela para zerar os outros elementos da coluna.
+
+6. 🧮 Obter a solução (última coluna)
+Por que fazer:
+Depois de transformar a matriz, a última coluna da matriz final conterá os resultados.
+
+O que pensar:
+
+A última coluna representa os termos independentes.
+
+Como a matriz está na forma [1 0 0 | x1], [0 1 0 | x2], etc., basta extrair esses valores.
+
+Dica prática:
+
+Apenas leia os últimos números de cada linha.
+
+7. 🧭 Função principal para organizar a execução
+Por que fazer:
+Ajuda a centralizar o fluxo do programa, facilitando a apresentação e o entendimento.
+
+O que pensar:
+
+A função principal deve:
+
+Ler a matriz
+
+Verificar se o sistema é válido
+
+Trocar linhas se necessário
+
+Executar Gauss (com ou sem Jordan)
+
+Mostrar a solução
+
+Dica prática:
+
+Use mensagens simples no terminal para indicar o que está sendo feito ("Verificando proporcionalidade...", "Zerando abaixo da diagonal...").
+
+🔚 DICA FINAL DE APRESENTAÇÃO
+Cada membro do grupo pode explicar uma parte (leitura, validação, troca de linhas, escalonamento, solução).
+
+Mostre o que acontece com a matriz em cada passo (antes e depois) — isso dá clareza e impressiona.
+
+Tenha exemplos prontos com:
+
+Um sistema com solução
+
+Um sistema impossível (linhas proporcionais)
+
+Um sistema que exige troca de linhas
+

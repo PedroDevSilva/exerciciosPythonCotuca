@@ -1,0 +1,68 @@
+Biblioteca: 
+
+
+--------------Entidades-----------------------------
+Albert Júnior
+Carla
+Arthur Mysterious (autor)
+Biblioteca
+O enigma do tempo (livro)
+
+---------------Relacionamentos----------------------
+Albert com o livro enigma do medo ( livro pego por ele )
+Albert com a biblioteca ( onde pegou o livro )
+Carla biblioteca ( trabalha lá )
+Livro com autor
+
+---------------Atributos----------------------------
+
+Albert Júnior: nome, autor favorito, sua cidade, seu amigo Bartolomeu
+Carla: nome, bibliotecária
+livro: n de registro, título e autor
+Arthur mysterious: nome, seu livro "O enigma do tempo"
+Biblioteca: Localidade, horário de funcionamento
+O enigma do medo (livro)
+
+
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+
+
+Teatro Lumière:
+
+
+--------------Entidades---------------------
+Altamiro Miranda
+Laptop
+Teatro lumière
+Amor em cena (a peça)
+Bilheteria
+Ingresso
+
+------------Relacionamentos-----------------
+Altamiro com laptop (por onde comprou o ingresso)
+Altamiro com teatro (onde ocorreu a peça)
+Altamiro com ingresso (onde retirou o ingresso)
+Bilheteria com ingresso (ingressos são retirados na bilheteria)
+Teatro com 'amor em cena'
+
+------------Atributos------------------------
+
+Altamiro Miranda: nome, cidade onde mora, data de nascimento, documento
+Laptop: configurações, modelo, cor, tipo de acesso à internet
+Teatro: endereço, n de pessoas suportadas, horário das apresentações
+Amor em cena: nome, duração da peça, personagens
+Bilheteria: quais ingressos distribui, horário de funcionamento
+Ingresso: valor, data limite
+
+
+
+
+
+
+
+

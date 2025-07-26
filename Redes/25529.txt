@@ -1,0 +1,103 @@
+1. 
+	Compartilhar dados e  arquivos, interligando dispositivos nas escolas, empresas, residências pessoais,
+dentre outros, de maneira segura e com maior flexibilidade.
+
+
+2.
+	Preencher a necessidade de comunicação entre um grande número de dispositivos e organizações militares
+diversas.
+
+
+3.
+	Elas comprovam a capacidade técnica na área de um indivíduo, sendo interessante ou até necessário 
+dependendo da área concorrida. O empregado passa uma confiança maior quando apresentado uma certificação. Experiência
+e certificados são quase que igualmente importantes.
+
+
+4.
+	Por conta da demanda de mercado de várias empresas estarem migrando para sistemas em nuvem, validação de habilidades e diversidade de serviços.
+Amazon: Valida habilidades  em projetar
+Google: Está focado em resolver problemas de negócios
+Azure: Validar conhecimento de serviços em nuvem
+
+
+5. 
+	Sinal analogico é feito de ondas, e o digital säo sequencias de 0s e 1s
+
+
+6.
+        Simplex os dados navegam em uma só direcao e um dado por vez, como tv. HalfDuplex os dados navegam em duas direcoes, mas ainda um por vez , como walkies talkies. FullDuplex eles navegam em ambas direcoes ao mesmo tempo, como a Ethernet.
+
+
+7.    
+        Largura de banda é a capacidade maxima na qual dados podem ser transmitidos. A taxa de transmissao é a velocidade real na qual os dados estao sendo transmitidos.
+
+
+8.
+        Basicamente a base/ esqueleto pra montagem de uma rede de comunicacao que utilizando dispositivos fisicos e muita logica para transmissao de dados utilizando uma topologia adequada a cada situacao
+
+
+9.
+         Organiza, reduz falhas, facilita encontrar erros, e melhora a transmissao de dados de uma empresa,
+
+
+10.
+          Para facilitar e colocar um "padrao'' de qualidade nas empresas e garantir seguranca de arquivos e dados.
+
+
+11. 
+         Cabo de par trancado, fibra optica e cabo coaxial
+
+
+12.
+          Internets e telefones
+
+
+13. 
+        
+          Alicate de crimpagem e testador de cabos.
+
+
+14. 
+
+
+           Dispositivos finais sao dispositivos que geralmente recebem uma informacao por final, como computador, smartphone e impressoras.
+           E os intermediarios intermediam dados, como roteador, hub e switches
+
+
+15.
+
+
+           Switch conecta dispositivos em uma lan. 
+           Roteador conecta diferentes dispostivos e gerencia internet
+           Repetidor amplifica o sinal de rede
+           Ponto de acesso permite nos conectarmos a uma rede sem cabo (wifi)
+
+16. 
+        Fisica e basicamente a parte dos cabos e disponibilidade do local para tal.
+        Logica se refere a separacao de cabos e organizacao na qual os dados sao separados e distribuidos
+
+
+17. 
+         Redes coaxiais, todos dispositivos concectados a um cabo so
+
+
+18.
+         Pela baixa seguranca, velocidade menor, e menos flexibilidade de mudancas
+
+
+19. 
+
+
+        Obviamente a topologia estrela, pois com ela e muito mais facil identificar problemas, fazer alteracoes nos dispositivos conectados, todos os dispositivos se conversam ao mesmo tempo, e é bem mais rapida que a barramento.
+
+
+20.
+
+
+         Lan: Local area network: redes pequenas, nao passam de um predio geralmente
+         Man: Metropolitan are network: interliga varios edificios e dispotivos numa area maior
+         Wan: Wide area network: interliga uma area bem maior geograficamente falando, até o mundo todo
+
+
+Bibliografia: Questao 4, pesquisado na IA Aria: Por que as certificações da Amazon, da Google e da Azure estão em alta na área de TI focada na infraestrutura? Faça um breve resumo sobre essas 3 certificações.

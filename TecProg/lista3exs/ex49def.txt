@@ -1,0 +1,41 @@
+def exibir_soma(x):
+    soma=1
+    divisor=2
+    while divisor <= x:
+        if x % divisor == 0:
+            soma+=divisor
+            divisor+=1
+        else:
+            divisor+=1
+    return soma
+
+def resposta_s_ou_n(pergunta):
+    while True:
+        resposta=input(pergunta)
+        resposta=resposta.upper()
+        if resposta!="S" and resposta!="N":
+            print("Utilize apenas S ou N; tente novamente")
+        else:
+            break
+    return resposta
+
+
+terminou_teste=False
+while not terminou_teste:
+    while True:
+        try:
+            x=int(input("Digite um número e retornarei a soma de todos os divisores dele: "))
+        except ValueError:
+            print("Utilize apenas números; tente novamente")
+        else:
+            if x<=1:
+                print("Utilize um número válido acima de 1; tente novamente")
+            else:
+                resultado=exibir_soma(x)
+                print("A soma dos divisores de",x,"é de",resultado)
+                break
+
+    pergunta="Deseja continuar? S ou N: "
+    if resposta_s_ou_n(pergunta)=="N":
+        print("Programa finalizado com sucesso")
+        terminou_teste=True

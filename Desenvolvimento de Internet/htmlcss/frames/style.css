@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+    background-color: #ccc;
+
+}
+
+header, footer, article, aside, nav, section {
+    display:block;
+
+}
+
+#site {
+    text-align: left;
+    margin: 10px auto;
+    width: 1480px;
+
+}
+
+.topo {
+    height:100px;
+    background-color: #4b0082;
+
+}
+
+.menu {
+    height: 30px;
+    background-color: #4b0082;
+    padding: 15px;
+
+}
+
+.menu ul li {
+    list-style: none;
+    display: inline;
+    margin: 10px;
+    
+}
+
+a {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+
+}
+
+.conteudo {
+    width: 1180px;
+    height: 400px;
+    float: left;
+    background:#f3f3f3;
+    padding: 10px;
+
+}
+
+.conteudo article {
+    height: 370px;
+    background: #894589;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: aqua;
+    font-weight: bold;
+
+}
+.titulo_aside {
+    background: #894589;
+    height: 420;
+    width: 280;
+    float: right;
+    color: blue;
+
+}

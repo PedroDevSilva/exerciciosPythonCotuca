@@ -1,0 +1,38 @@
+print ("Calcularei o perímetro de um retangulo/paralelogramo")
+try:
+
+    m = float (input("Digite a medida do lado menor do retangulo: "))
+except ValueError:
+
+    print("Por gentileza, utilize apenas numeros: ")
+    input("Pressione enter para finalizar o programa ")
+else:
+
+    if m<=0:
+
+        print ("Deve ser digitado um numero maior que zero")
+        input ("Pressione enter para finalizar o programa ")
+    else:
+        try:
+
+            M = float (input("Digite agora a medida do lado maior do retangulo: "))
+        except ValueError:
+
+            print ("Utilize apenas numeros ")
+            input("Pressione enter para finalizar o programa ")
+
+        else:
+            if M<=m:
+                print("A medida do lado maior deve ser maior que o lado menor digitado anteriormente ")
+                input("Pressione enter para finalizar o programa ")
+            else:
+
+
+                if M<=0:
+                    print ("Deve ser digitado um numero maior que zero")
+                    input ("Pressione enter para finalizar o programa ")
+                else:
+
+                    p=2*(m+M)
+                    print("O perímetro do seu retangulo é", p)
+                    input("Pressione enter para finalizar o programa ")

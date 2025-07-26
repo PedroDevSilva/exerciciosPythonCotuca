@@ -1,0 +1,65 @@
+def soma_dos_div(num):
+    soma_num = 1
+    divisor = 2
+    met_num = num // 2
+
+    while divisor<=met_num:
+        if num % divisor == 0:
+            soma_num += divisor
+        divisor += 1
+    return soma_num
+
+def sao_amigos(a,b):
+    soma_num1=soma_dos_div(a)
+    soma_num2=soma_dos_div(b)
+    if a==soma_num2 and b==soma_num1:
+        return True
+    else:
+        return False
+
+def resposta_s_ou_n(pergunta):
+    while True:
+        resposta=input()
+        resposta=resposta.upper()
+        if resposta!="S" and resposta!="N":
+            print("Utilize apenas S ou N, tente novamente")
+        else:
+            break
+    return resposta
+
+print("Programa confere se dois números naturais tem a soma de seus divisores iguais entre si")
+terminou_teste=False
+while not terminou_teste:
+    while True:
+        try:
+            num1=int(input("Digite o primeiro número: "))
+        except ValueError:
+            print("Utilize apenas números")
+        else:
+            if num1<=0:
+                print("Utilize um número válido")
+            else:
+                try:
+                    num2=int(input("Digite agora o segundo número: "))
+                except ValueError:
+                    print("Utilize apenas números")
+                else:
+                    if num1 == num2:
+                        print("Ambos os números deve ser diferentes! ")
+                    elif num2 <= 0:
+                        print("Utilize um número válido")
+                break
+
+    soma_num1=soma_dos_div(num1)
+    soma_num2=soma_dos_div(num2)
+    print(soma_num1, soma_num2)
+
+
+    if sao_amigos(num1,num2):
+        print(f"{num1} e {num2} são amigos.")
+    else:
+        print(f"{num1} e {num2} não são amigos.")
+
+    if resposta_s_ou_n("Deseja conferir se outros números são amigos? ")=="N":
+        print("Programa finalizado com sucesso")
+

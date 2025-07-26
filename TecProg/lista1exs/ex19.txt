@@ -1,0 +1,21 @@
+print("Calcularei a área de um triângulo!")
+try:
+    b=float(input("Digite a medida da base do triângulo em cm: "))
+except ValueError:
+    print("Utilize apenas números")
+else:
+    if b<=0:
+        print("Utilize uma medida maior que zero")
+    else:
+        try:
+            a=float(input("Digite agora a medida da altura em cm: "))
+        except ValueError:
+            print("Utilize apenas números")
+        else:
+            if a<=0:
+                print("Utilize uma medida maior que zero")
+            else:
+                A = (a*b) / 2
+                print("A área do seu triângulo é",A,"Centímetros quadrados")
+input("\nPressione enter para finalizar o programa")
+print("\nPrograma finalizado com sucesso! ")

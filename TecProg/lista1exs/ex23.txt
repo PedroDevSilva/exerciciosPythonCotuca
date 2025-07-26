@@ -1,0 +1,32 @@
+print("Calcularei a área em centímetros quadrados de um trapézio!")
+try:
+    b=float(input("Digite a medida em cm quadrados da base MENOR do seu trapézio: "))
+except ValueError:
+    print("Utilize apenas número por gentileza")
+else:
+    if b<=0:
+        print("Por gentileza, utilize apenas medidas positivas")
+    else:
+        try:
+            B=float(input("Digite agora em cm quadrados a medida da base MAIOR: "))
+        except ValueError:
+            print("Utilize apenas números por gentileza")
+        else:
+            if B<=0:
+                print("Por gentileza, utilize apenas medidas positivas")
+            else:
+                if b>=B:
+                    print("A base MENOR deve ser MENOR que a base MAIOR")
+                else:
+                    try:
+                        A=float(input("Digite agora a medida da altura em cm: "))
+                    except ValueError:
+                        print("Utilize apenas números por gentileza")
+                    else:
+                        if A<=0:
+                            print("Por gentileza, utilize apenas números positivos")
+                        else:
+                            a = ((b+B)*A)/2
+                            print("A área do seu trapézio é de",a,"centímetros quadrados")
+input("\nPressione enter para finalizar o programa")
+print("\nPrograma finalizado com sucesso")

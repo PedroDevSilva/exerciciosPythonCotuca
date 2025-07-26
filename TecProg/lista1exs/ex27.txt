@@ -1,0 +1,19 @@
+print("Calcularei a raiz de uma equacao de primeiro grau")
+try:
+    a=float(input("Digite o valor do coeficiente A: "))
+except ValueError:
+    print("Utilize apenas números")
+else:
+    try:
+        b=float(input("Digite agora o valor do coeficiente B: "))
+    except ValueError:
+        print("Utilize apenas números")
+    else:
+        if a == 0:
+            if b == 0:
+                print ("A equacao tem infinitas solucoes")
+            else:
+                print ("A equacacao nao tem solucao")
+        else:
+            r=(-b)/a
+            print("A raiz da sua equacao é",r)

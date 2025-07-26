@@ -1,0 +1,17 @@
+print("Digite os graus Celsius atuais e converterei para graus Rankine!")
+try:
+    c=float(input("Digite a temperatura: "))
+except ValueError:
+    print ("Por gentileza, utilize apenas números")
+    input("Pressione enter para finalizar o programa")
+    print("\a")
+else:
+    if c<-273.15:
+        print("A temperatura deve ser maior que o zero absoluto (em celsius)")
+        input("Pressione enter para finalizr o programa")
+        print("\a")
+    else:
+        r=(c*1.8)+491.67
+        print ("A temperatura em graus Rankine é:",r)
+        input("Pressione enter para finalizar o programa")
+        print("\a")

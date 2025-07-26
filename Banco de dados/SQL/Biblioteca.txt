@@ -1,0 +1,115 @@
+
+--1.
+select * 
+	from ct_estado
+
+select nome 
+	from ct_ESTADO
+
+insert into ct_ESTADO (uf,nome)
+	values ('SP','São Paulo')
+
+insert into ct_ESTADO (uf,nome)
+	values ('MG','Minhas Gerais')
+
+insert into ct_ESTADO (uf,nome)
+	values ('RJ','Rio de Jambeiro')
+
+insert into ct_ESTADO (uf,nome)
+	values ('ES','Espírito Santo')
+
+
+
+select *
+	from ct_CIDADE
+
+insert into ct_CIDADE (nome,uf)
+	values ('Campinas','SP')
+
+insert into ct_CIDADE (nome,uf)
+	values ('Jundiaí','SP')
+
+insert into ct_CIDADE (nome,uf)
+	values ('Americanos','SP')
+
+insert into ct_CIDADE (nome,uf)
+	values ('Sumaré','SP')
+
+insert into ct_CIDADE (nome,uf)
+	values ('Rio de Janerio','RJ')
+
+insert into ct_CIDADE (nome,uf)
+	values ('Niteroense','RJ')
+
+insert into ct_CIDADE  (nome,uf)
+	values ('Vitória','ES')
+
+insert into ct_CIDADE (nome,uf)	
+	values ('Cidade do Chocolate','ES')
+
+insert into ct_CIDADE (nome,uf)
+	values ('Belzonte','MG')
+
+
+select * 
+	from ct_estado
+
+
+update ct_ESTADO 
+	set nome='Minas Gerais'
+	where nome='Minhas Gerais'
+
+update ct_ESTADO 
+	set nome='Rio de Janeiro'
+	where nome='Rio de Jambeiro'
+
+
+select *
+	from ct_CIDADE
+
+update ct_CIDADE
+	set nome='Americana'
+	where nome='Americanos'
+
+update ct_CIDADE
+	set nome='Niterói'
+	where nome='Niteroense'
+
+update ct_CIDADE
+	set nome='Vila Velha'
+	where nome='Cidade do Chocolate'
+
+update ct_CIDADE 
+	set nome='Belo Horizonte'
+	where nome='Belzonte'
+
+
+--2.
+--A opção foi excluida (O uf 'sp' e o nome 'sao paulo')
+delete from ct_ESTADO
+	where uf='SP'
+
+
+--3.
+--Nenhuma linha afetada, pois nao existe cidades cadastradas do estado de MS
+select *
+	from ct_CIDADE
+
+delete from ct_CIDADE
+	where uf='MS'
+	
+
+--4.
+select *
+	from ct_CLIENTE
+
+alter table ct_CLIENTE
+	drop column email
+
+insert into ct_CLIENTE (nome,endereco,idcidade,idestado,email)
+	values ('Felix Aureliano','Rua das Flores 124','1','SP'),
+		('Tâmara Aureliana','Rua 13 de Outubro','1','SP'),
+		('Duane Litus','Av dos Alecrins 43','3','SP'),
+		('Salvio Almeida','Rua de Baixo 5124','6','RJ'),
+		('Austero Prado','Av Lindemberg 65','15','MG'),
+		('Falister Duarte','Rua Alves Lima 644','17','MG')

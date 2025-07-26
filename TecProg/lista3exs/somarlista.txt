@@ -1,0 +1,12 @@
+def somar_todos_items(lista):
+    fim_da_lista=len(lista[-1])
+    item_atual=lista[1]
+    soma=lista[0]
+    while item_atual < fim_da_lista:
+        soma=+item_atual
+        item_atual=+len(lista)
+    return soma
+
+lista=[1,2,3,4,5]
+somar_todos_items(lista)
+print(soma)

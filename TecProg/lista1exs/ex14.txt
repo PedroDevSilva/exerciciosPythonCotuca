@@ -1,0 +1,23 @@
+#PERÍMETRO DE UM QUADRADO RETÂNGULO
+print("Calcularei o perímetro de um quadrado retângulo")
+try:
+    l=float(input("Digite a medida dos lados em centímetros: "))
+except ValueError:
+    print("Utilize apenas números na medida >:( ")
+    input("Pressione enter para finalizar o programa")
+    print("\a")
+else:
+    if l<-0:
+        print("A medida não deve ser menor que zero >:( ")
+        input("Pressione enter para finalizar o programa")
+        print("\a")
+
+    elif l==0:
+        print("A medida não deve ser igual à zero >:( ")
+        input("Pressione enter para finalizar o programa")
+        print("\a")
+    else:
+        p=l*4
+        print("O perímetro do seu quadrado retângulo é de",p,"centímetros ")
+        input("Pressione enter para finalizar o programa")
+        print("\a")

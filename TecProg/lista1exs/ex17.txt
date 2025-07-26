@@ -1,0 +1,21 @@
+print("Calcularei o perímetro e um polígono regular! ")
+try:
+    l = int (input("Digite a quantidade de lados do seu polígono: "))
+except ValueError:
+    print("Utilize apenas números inteiros")
+else:
+    if l<=2:
+        print("A quantidade deve ser maior ou igual a 3 lados")
+    else:
+        try:
+            cm = float(input("Digite agora a medida em cm dos lados: "))
+        except ValueError:
+            print("Digite apenas números")
+        else:
+            if cm<=0:
+                print("Não tem como haver um polígono com lados zerados ou negativos")
+            else:
+                p = l * cm
+                print("O perímetro do seu polígono regular é",p,"centímetros")
+input("\nPressione enter para finalizar o programa ")
+print("\nPrograma finalizado com sucesso! ")

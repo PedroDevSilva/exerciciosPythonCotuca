@@ -1,0 +1,38 @@
+print("Programa que classifica triangulos com bases nos angulos")
+nome=(input("Por gentileza, digite seu nome: ")) #Tentando pegar nome do usuário
+try:
+    a1=float(input("Digite a medida em cm do primeiro angulo: "))
+except ValueError:
+        print(nome,"a medida deve ser digitada em número")
+else:
+    if a1<=0 or a1>=180: #Numero fora da faixa valida
+        print(nome,"utilize um valor válido, maior que 0 e menor que 180 graus")
+    else:
+        try:
+            a2=float(input("Agora digite a medida em cm do segundo angulo: "))
+        except ValueError:
+            print(nome,"A medida deve ser digitada em números")
+        else:
+            if a2<=0 or a2>=180:
+                print(nome,"utilize um valor válido, maior que 0 e menor que 180 graus")
+            else: #tenho os dois lados
+                if a1+a2>=180:
+                    print("Estas medidas nao foram um triangulo")
+                else:
+                    try:
+                        a3=float(input("Agora digite a medida em cm do terceiro angulo: "))
+                    except ValueError:
+                        print("Digite apenas números")
+                    else:
+                        if a3<=0 or a3>=180:
+                            print("Digite um valor válido, maior que 0 e menor que 180 graus")
+                        else:
+                            if a1<90 and a2<90 and a3<90: #tres lados agudos
+                                print("Seu triangulo é um triangulo acutangulo")
+                            else: #acutangulo ele nao é
+                                if a1==90 or a2==90:
+                                    print("Trata-se de um triangulo retangulo")
+                                else:
+                                    print("Seu triangulo é um triangulo obtusangulo")
+input("Pressione enter para finalizar o programa ")
+print("Programa finalizado !")

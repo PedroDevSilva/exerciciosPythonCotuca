@@ -1,0 +1,32 @@
+print("Calcularei o perímetro de um trapézio")
+try:
+    m = float(input("Digite a medida do lado menor do trapézio: "))
+except ValueError:
+    print("Utilize apenas números por gentileza ")
+else:
+    if m <=0:
+        print("Utilize um valor positivo")
+    else:
+        try:
+            M = float(input("Digite agora a medida do lado maior do trapézio: "))
+        except ValueError:
+            print("Utilize apenas números por gentileza")
+        else:
+            if M <=0:
+                print("Utilieze um valor posstivo")
+            else:
+                if m >= M:
+                    print("O lado menor do trapézio deve ser menor que o lado maior")
+                else:
+                    try:
+                        o = float(input("Digite agora a medida dos dois ultimos lados que conectam o lado menor ao lado maior: "))
+                    except ValueError:
+                        print("Utilize apenas números")
+                    else:
+                        if o <= 0:
+                            print("A medida deve ser positiva")
+                        else:
+                            p = o*2+m+M
+                            print("O perímetro do seu trapézio é",p)
+input("\nPressione enter para finalizar o programa")
+print("\nPrograma finalizado!")

@@ -1,0 +1,24 @@
+print("Calcularei a área em centímetros quadrados de um losango/paralelogramo!")
+try:
+    d=float(input("Digite a medida em cm da diagonal menor: "))
+except ValueError:
+    print("Utilize apenas números")
+else:
+    if d<=0:
+        print("Utilize um número maior que zero")
+    else:
+        try:
+            D=float(input("Digite agora a medida da diagonal maior em cm: "))
+        except ValueError:
+            print("Utilize apenas números")
+        else:
+            if D<=0:
+                print("Utilize um número maior que zero")
+            else:
+                if d>=D:
+                    print("A diagonal MENOR deve ser MENOR que a diagonal MAIOR")
+                else:
+                    a = (d*D)/2
+                    print("A área do seu losango/paralelogramo é de",a,"centímetros quadrados!")
+input("Pressione enter para finalizar o programa")
+print("Programa finaliado com sucesso! ")

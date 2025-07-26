@@ -1,0 +1,18 @@
+print("Converterei temperatura Kelvin para Farenheit!")
+try:
+    k=float(input("Digite a temperatura em graus kelvin: "))
+except ValueError:
+    print ("Utilize apenas números por gentileza")
+    input("Pressione enter para finalizar o programa")
+    print("\a")
+else:
+    if k<0:
+        print("Utilize uma temperatura acima do zero absoluto em kelvin")
+        input('Pressione enter para finalizar o programa')
+        print('\a')
+    else:
+        c = k - 273.15
+        f = 9 * c / 5 + 32
+        print('A temperatura convertida para Fahrenheit é de',f)
+        input('Pressione enter para finalizar o programa')
+        print('\a')

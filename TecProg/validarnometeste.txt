@@ -1,0 +1,21 @@
+import re
+def validar_nome(nome):
+      # Verifica se o nome é uma string
+  if not isinstance(nome, str):
+    return False
+
+  # Verifica se o nome tem enter 2 e 50 caracteres
+  if len(nome) < 2 or len(nome) > 50:
+    return False
+
+  # Verifica se o nome contém apenas letras, espaços e hífens
+  if not re.match(r'^[a-zA-Z\s\-]{2,50}$', nome):
+    return False
+
+  return True
+
+nome = input("Digite seu nome: ")
+if validar_nome(nome):
+  print(f"O nome '{nome}' é válido!")
+else:
+  print(f"O nome '{nome}' é inválido. Por favor, digite um nome válido.")

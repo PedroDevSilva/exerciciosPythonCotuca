@@ -1,0 +1,141 @@
+#Programa que calcula perímetros com menu de seleção
+print("Programa que calculará o perímetro de formas geométricas")
+try:
+    forma=int(input("Com base no menu abaixo:\n1 - Triângulo\n2 - Quadrado rentangulo\n3 - Retângulo paralelogramo\n4 "
+                "- Trapézio\n5 - Polígono regular à sua escolha de lados\n6 - Círculo\n\nDigite o número respectivo a forma na qual deseja "
+                "calcular o perímetro: "))
+except ValueError:
+    print("Utilize apenas números!")
+else:
+    if forma <1 or forma >6:
+        print("Utilize um número válido, entre 1 e 6")
+if forma == 1:
+    try:
+        l1=float(input("\nDigite a medida do primeiro lado do seu triângulo: "))
+    except ValueError:
+        print("Utilize apenas números")
+    else:
+        if l1<=0:
+            print("Utilize números positivos")
+        else:
+            try:
+                l2=float(input("\nDigite agora a medida do segundo lado do seu triângulo: "))
+            except ValueError:
+                print("Utilize apenas números")
+            else:
+                if l2<=0:
+                    print("Utilize números positivos")
+                else:
+                    try:
+                        l3=float(input("\nDigite agora por ultimo a medida do terceiro lado: "))
+                    except ValueError:
+                        print("Utilize apenas números")
+                    else:
+                        if l3<=0:
+                            print("Utilize números positivos")
+                        else:
+                            if l1+l2<=l3 or l1+l3<=l2 or l2+l3<=1:
+                                print("Essas medida não formam um triângulo")
+                            else:
+                                p = l1+l2+l3
+                                print("\nO perímetro do seu triângulo é de",p,"centímetros quadrados")
+else:
+    if forma == 2:
+        try:
+            l=float(input("Digite a medida dos lados do seu quadrado: "))
+        except ValueError:
+            print("Utilize apenas números")
+        else:
+            if l<=0:
+                print("Utilize um número maior que zero")
+            else:
+                p=l*4
+                print("O perímetro  do seu quadrado retângulo é de",p,"centímetros")
+    else:
+        if forma == 3:
+            try:
+                m=float(input("DIgite a medida do lado menor do retângulo: "))
+            except ValueError:
+                print("Utilize apenas números")
+            else:
+                if m<=0:
+                    print("Utilize uma medida maior que zero")
+                else:
+                    try:
+                        M=float(input("Digite agora a medida do lado maior do retângulo: "))
+                    except ValueError:
+                        print("Utilize apenas números")
+                    else:
+                        if M<=m:
+                            print("A medida do lado MAIOR deve ser MAIOR que o lado MENOR")
+                        else:
+                            if M<=0:
+                                print("Utilize um valor maior que zero")
+                            else:
+                                p=2*(m+M)
+                                print("O perímetro do seu retângulo é",p)
+        else:
+            if forma == 4:
+                try:
+                    m = float(input("Digite a medida do lado menor do trapézio: "))
+                except ValueError:
+                    print("Utilize apenas números por gentileza ")
+                else:
+                    if m <= 0:
+                        print("Utilize um valor positivo")
+                    else:
+                        try:
+                            M = float(input("Digite agora a medida do lado maior do trapézio: "))
+                        except ValueError:
+                            print("Utilize apenas números por gentileza")
+                        else:
+                            if M <= 0:
+                                print("Utilieze um valor posstivo")
+                            else:
+                                if m >= M:
+                                    print("O lado menor do trapézio deve ser menor que o lado maior")
+                                else:
+                                    try:
+                                        o = float(input(
+                                            "Digite agora a medida dos dois ultimos lados que conectam o lado menor ao lado maior: "))
+                                    except ValueError:
+                                        print("Utilize apenas números")
+                                    else:
+                                        if o <= 0:
+                                            print("A medida deve ser positiva")
+                                        else:
+                                            p = o * 2 + m + M
+                                            print("O perímetro do seu trapézio é", p)
+            else:
+                if forma == 5:
+                    try:
+                        l = int(input("Digite a quantidade de lados do seu polígono: "))
+                    except ValueError:
+                        print("Utilize apenas números inteiros")
+                    else:
+                        if l <= 2:
+                            print("A quantidade deve ser maior ou igual a 3 lados")
+                        else:
+                            try:
+                                cm = float(input("Digite agora a medida em cm dos lados: "))
+                            except ValueError:
+                                print("Digite apenas números")
+                            else:
+                                if cm <= 0:
+                                    print("Não tem como haver um polígono com lados zerados ou negativos")
+                                else:
+                                    p = l * cm
+                                    print("O perímetro do seu polígono regular é", p, "centímetros")
+                else:
+                    if forma == 6:
+                        try:
+                            r = float(input("Digite a medida do raio em cm do círculo: "))
+                        except ValueError:
+                            print("Utilize apenas números")
+                        else:
+                            if r <= 0:
+                                print("Digite um raio maior que zero")
+                            else:
+                                p = 2 * 3.1415 * r
+                                print("O perímetro do círculos é", p)
+print("Programa finalizado com sucesso")

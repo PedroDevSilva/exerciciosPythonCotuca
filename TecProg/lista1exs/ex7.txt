@@ -1,0 +1,18 @@
+print("Converteirei os graus Fahrenheit para graus Kelvin!")
+try:
+    f=float(input("Digite os graus em Fahrenheit: "))
+except ValueError:
+    print("Utilize apenas números")
+    input("Pressione enter para finalizar o programa")
+    print("\a")
+else:
+    if f<-459.67:
+        print("A temperatura deve ser maior que o zero absoluto em fahrenheit")
+        input("Pressione enter para finalizar o programa")
+        print("\a")
+    else:
+        c=5/9*(f-32)
+        k=c+273.15
+        print ("A temperatura é:",k)
+        input("Pressione enter para finalizar o programa")
+        print("\a")

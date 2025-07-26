@@ -1,0 +1,129 @@
+body {
+    background-color: #22083a;
+}
+header, footer, aside, nav, section {
+    display: block;
+}
+#menuhorizontal ul {
+    padding: 0px;
+    margin: 0px;
+    width: 70%;
+    background-color: #2b0054;
+    list-style: none;
+}
+#menuhorizontal li {
+    display: inline;
+}
+#menuhorizontal li a {
+    padding: 10px 40px;
+    display: inline-block;
+    background-color: #2b0054;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border-bottom: 3px solid #ffffff;
+}
+#menuhorizontal ul li a:hover {
+    background-color: #7b44af;
+    border-bottom: 3px solid #80239a;
+    color: #000000;
+    font-weight: bolder;
+}
+img {
+    opacity: 1.0;
+}
+img:hover {
+    opacity: 0.7;
+}
+#site {
+    text-align: left;
+    margin: 10px auto;
+    width: 1480px;
+}
+section#conteudo {
+    width: 1080px;
+    height: 400px;
+    float: left;
+    background-color: #2b0054;
+    padding: 10px;
+}
+section#conteudo article {
+    height: 370px;
+    background-color: #894589;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    color: #26022c;
+    font-weight: 400px;
+    font-weight: bold;
+}
+aside {
+    background-color: #4b0082;
+    height: 420px;
+    width: 280px;
+    float: left;
+    color: #000000;
+    padding-left: 20px;
+}
+h3 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    color:#ff1433
+}
+header#topo {
+    height: 100px;
+    background-color: #2b0054;
+}
+ul#menuvertical, ul#menuvertical, ul {
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    border-bottom: 0px solid #ccc;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+}
+ul#menuvertical li {
+    position: relative;
+    list-style: none;
+}
+ul#menuvertical li a {
+    display: block;
+    text-decoration: none;
+    color: #894589;
+    border: 0px;
+    border-bottom: 0px; 
+}
+ul#menuvertical ul {
+    position: absolute;
+    display: none;
+    left: 100px;
+    top: 0;
+}
+ul#menuvertical li ul li a{
+    padding: 5px 5px;
+}
+ul#menuvertical li:hover ul ul,
+ul#menuvertical li:hover ul ul ul{
+    display: none;
+}
+ul#menuvertical li:hover ul,
+ul#menuvertical li li:hover ul,
+ul#menuvertical li li li:hover ul{
+    display: block;
+}
+
+
+ul#menuvertical li.submenu:hover a{
+    background-color: #7b44af;
+    color:#000000;
+}
+footer {
+    background:#4b0082;
+    height: 50px;
+    clear: both;
+    font-size: 18px;
+    align-content: center;
+    text-align: center;
+    color: white;
+}

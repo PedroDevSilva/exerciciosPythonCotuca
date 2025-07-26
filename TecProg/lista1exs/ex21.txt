@@ -1,0 +1,24 @@
+print("Calcularei a área de um retângulo! ")
+try:
+    m=float(input("Digite a medida em cm do lado menor do seu retângulo: "))
+except ValueError:
+    print("Utilize apenas números ")
+else:
+    if m<=0:
+        print("Utilize um número maior que zero")
+    else:
+        try:
+            M=float(input("Digite a medida em cm do lado maior do seu retângulo: "))
+        except ValueError:
+            print("Utilize apenas números ")
+        else:
+            if M<=0:
+                print("Utilize um número maior que zero")
+            else:
+                if m>M:
+                    print("O lado MENOR deve ser MENOR que o lado MAIOR")
+                else:
+                    a = m * M
+                    print("A área do seu retângulo é de",a,"centímetros quadrados! ")
+input("Pressione enter para finalizar o programa ")
+print("Programa finalizado com sucesso! ")

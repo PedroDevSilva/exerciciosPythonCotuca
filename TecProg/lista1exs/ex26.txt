@@ -1,0 +1,36 @@
+print("Calcularei o seu índice de massa corporal (BMI) ")
+try:
+    p=float(input("Digite seu peso em kilogramas: "))
+except ValueError:
+    print("Digite apenas números")
+else:
+    if p<=0:
+        print("Utilize números positivos")
+    else:
+        try:
+            a=float(input("Digite agora sua altura em metros: "))
+        except ValueError:
+            print("Utilize apenas números")
+        else:
+            if a<=0:
+                print("Sua altura deve ser número positivo")
+            else:
+                bmi=p/(a*a)
+                if bmi<=18.5:
+                    print(f"Seu BMI é de '{bmi}',portanto voce está abaixo do peso ideal para sua altura")
+                else:
+                    if 18.5 <= bmi <= 24.9:
+                        print(f"Seu BMI é de '{bmi}',portanto voce está no peso ideal para sua altura")
+                    else:
+                        if 25 <= bmi <= 29.9:
+                            print(f"Seu BMI é de '{bmi}',portanto voce está com sobrepeso para sua altura")
+                        else:
+                            if bmi>30:
+                                print(f"Seu BMI é de '{bmi}',portanto voce está com obesidade para sua altura")
+input("Pressione enter para finalizar o programa")
+print("Programa finalizado com sucesso")
+
+   # Menos de 18.5: Abaixo do peso
+   # 18.5 a 24.9: Peso normal
+   # 25 a 29.9: Sobrepeso
+   # 30 ou mais: Obesidade

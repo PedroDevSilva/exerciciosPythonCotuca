@@ -1,0 +1,31 @@
+Rede de telefonia móvel
+
+Introdução
+  A rede de telefonia móvel, ou rede de telefonia celular, mais comumente descrito hoje em dia, foram criadas com intuito de interligar pessoas e dispositivos em movimento, ou até em situações de emergência e acessibilidade e é extremamente presente desde a sua primeira versão:
+-AMPS, sinal analógico, 1G, criado no fim da década de 1990 com o método pré-pago se tornou muito popular. A AMPS(Advanced Mobile Phone Service), sendo 1G, permitia a transmissão de vozes, na faixa de 800MHz, sendo desenvolvida pelos Laboratórios Bell da AT&T(Atualmente faz parte da NOKIA), em Murray Hill, Nova Jersey;
+
+-GSM, sinal digital, 2G, evolução de suas duas primeiras versões (TDMA,CDMA).
+GSM(Global System for Mobile Communication), sendo agora 2G, possuía codificação digital de voz, melhoras na criptografia de áudio e melhora significativa na qualidade de voz. Também sendo capaz de navegar na internet com baixíssima velocidade (20 kbps a 50 kbps).
+
+-UMTS, sinal digital, 3G, evoluindo do 2.5G e 2.75G.
+UMTS(Universal Mobile, Telecommunications Service), crescendo agora para o 3G, é uma tecnologia baseada em IP que pode transmitir voz e dados de pacotes com maior taxa de transmissão (220 a 320 kbps) quando usuário está em movimento, e até chegando a 14 Mbps, no melhor dos casos. Pode ser utilizado agora para transmitir vídeos, em streaming ou videoconferências, seja no celular ou em notebooks.
+
+-LTE, sinal digital, 4G.
+LTE(Long Term Evolution), chegando no 4G, melhorando e muito a qualidade de transmissão de pacotes e simplificando a codificação e complexidade dos dados, em condições ideais o LTE pode chegar até a 120 Mbps de taxa de transmissão.
+ 
+-NR, sinal digital, 5G.
+NR(New Radio), com a 5a Geração, prometeu-se maiores velocidades de internet, no intuito de indústrias se conectarem com maior estabilidade e serem capazes de aplicar em ecossistemas inteligentes, como carros autônomos, máquinas ou robôs.
+
+
+
+
+
+
+
+
+
+
+
+
+Bibliografia
+https://pt.wikipedia.org/wiki/Rede_de_telefonia_celular

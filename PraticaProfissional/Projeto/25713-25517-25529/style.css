@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.menuHorizontal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menuHorizontal input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.menuHorizontal select {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.menuHorizontal button {
+    background-color: yellow;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+main {
+    position: relative;
+}
+
+.fundotransparente {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.filmePrincipal {
+    border-radius: 10px;
+
+}
+
+.dias {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    background-color: #a30000;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.dias ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.dias ul li {
+    position: relative;
+}
+
+.dias ul li a {
+    color: white;
+    justify-content: space-between;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+    border-radius: 3px;
+}
+
+.dias ul li a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.botao {
+    list-style: none;
+    display: block;
+}
+
+.vitrine {
+    padding: 20px;
+    text-align: center;
+}
+
+.vitrine h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.card a {
+    text-decoration: none;
+    display: block;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.info p {
+    font-size: 0.9rem;
+    color: #ccc;
+}

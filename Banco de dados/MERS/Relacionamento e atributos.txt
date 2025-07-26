@@ -1,0 +1,66 @@
+Relacionamentos entre as seguintes entidades:
+
+aluno / professor / disciplina / curso / escola
+
+Aluno com disciplina - aprende a disciplina
+Aluno com curso - é igressado no curso
+Disciplina com curso - conjunto de conteúdo reunido no curso
+Curso com escola - curso é passado no ambiente escolar
+
+Atributos:
+
+aluno : RA, nome, data de nascimento/idade
+professor: nome, formação, idade
+disciplina: Diferentes conteúdos, matérias
+curso: Duração, horário de estágio necessário para se formar
+escola: Localidade, horário de funcionamento
+
+--------------------------------------------------------------------
+
+ Relacionamentos entre as seguintes entidades:
+
+jogador / time / campeonato / esporte / treinador
+
+jogador com esporte - pratica o esporte
+jogador com time - está no time 
+time com treinador - time é treinado pelo treinador
+campeonato com esporte - há modalidade do campeonato com o esporte
+
+Atributos: 
+
+jogador: nome, posição de jogo, histórico de jogos
+time: nome, símbolo
+campeonato: data, localidade
+esporte: nome, regras
+treinador: nome, certificado de formação 
+
+--------------------------------------------------------------------
+ 
+ Relacionamentos entre as seguintes entidades:
+
+correntista, banco, agencia, conta corrente, poupança, contas em debito automático
+
+correntista com conta corrente
+correntista com banco
+banco com agencia
+conta corrente com banco
+debito automático com conta corrente
+poupança com banco
+
+Atributos: 
+
+correntista: nome, número da conta, saldo da conta, documentação
+banco: endereço, nome
+agencia: endereço, código da agência, qual banco pertence
+conta corrente: saldo, dados do usuário
+poupança: valores dos rendimentos, valor investido
+contas em débito automático: saldo para pagamento, quem será pago em determinada data 
+
+
+
+
+
+
+
+
+

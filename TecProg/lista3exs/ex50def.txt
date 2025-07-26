@@ -1,0 +1,16 @@
+def ver_num_prim(x):
+    divisor=2
+    while divisor < x :
+        if x % divisor == 0:
+            return False
+        else:
+            divisor += 1
+    return True
+
+x=int(input("Digite um numero: "))
+
+if ver_num_prim(x):
+    print("E primo")
+else:
+    print('nao primo')
+

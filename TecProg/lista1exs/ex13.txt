@@ -1,0 +1,31 @@
+print ("Calcularei o perímetro de um triângulo cujo as medidas você digitará")
+try:
+    l1 = float (input("Digite a medida do primeiro lado: "))
+except ValueError:
+    print("Por gentileza, utilize apenas números")
+else:
+    if l1<=0:
+        print("Por gentileza, use um número positivo")
+    else:
+        try:
+            l2 = float(input("Agora a medida do segundo: "))
+        except ValueError:
+            print("Por gentileza, utilize apenas números")
+        else:
+            if l2<=0:
+                print("Por gentileza, utilize um número positivo")
+            else:
+                try:
+                    l3 = float(input("Agora o último lado: "))
+                except ValueError:
+                    print ("Por gentileza, utilize apenas números")
+                else:
+                    if l3<=0:
+                        print("Por gentileza, utilize um número positivo")
+                    else:
+                        if l1+l2<=l3 or l1+l3<=l2 or l2+l3<=l1:
+                            print("Com essas medidas não formam um triângulo")
+                        else:
+                            p = l1 + l2 + l3
+                            print("O perímetro do seu triângulo é:", p)
+ 

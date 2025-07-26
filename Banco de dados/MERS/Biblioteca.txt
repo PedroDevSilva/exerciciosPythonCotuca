@@ -1,0 +1,81 @@
+Biblioteca: 
+
+--------------Entidades-----------------------------
+Albert Júnior
+Carla
+Arthur Mysterious (autor)
+Biblioteca
+O enigma do tempo (livro)
+
+---------------Relacionamentos----------------------
+Albert com o livro enigma do medo ( livro pego por ele )
+Albert com a biblioteca ( onde pegou o livro )
+Carla biblioteca ( trabalha lá )
+Livro com autor
+
+---------------Atributos----------------------------
+
+Albert Júnior: nome, autor favorito, sua cidade, seu amigo bartolomeu
+Carla: nome, bibliotecária
+livro: n de registro, título e autor
+Arthur mysterious: nome, seu livro "O enigma do tempo"
+Biblioteca: 
+
+
+
+
+
+
+
+
+
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+==============================================================================================================
+
+
+Teatro Lumière:
+
+
+--------------Pessoa envolvidas---------------------
+-Protagonista
+Altamiro Miranda
+
+-Pessoas que apresentam o espetáculo
+Atores
+
+----------------------------------------------------
+
+------------Dados que se referem à datas------------
+-Quando Altamiro procurou a apresentação
+Uma tarde de sábado
+
+-Quando ocorreu a apresentação
+De noite
+
+----------------------------------------------------
+
+------------Dados que se referem à um local---------
+-Onde foi a apresentação
+Teatro Lumiére
+Na própria cidade de Altamiro
+
+
+----------------------------------------------------
+
+-----------Dados que se referem à apresentação------
+-Tipo de apresentação
+Teatro
+
+-Gênero teatral da apresentação
+Comédia romântica
+
+-Nome da apresentação
+Amor em Cena
+
+-Duração da apresentação
+Duas horas
+opi

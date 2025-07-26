@@ -1,0 +1,101 @@
+#Programa com menu de converter temperaturas
+print("\nPrograma que converte temperaturas ")
+print("\nDigite o número que corresponde a medida de sua primeira temperatura")
+print("\n1=Celsius\n2=Fahrenheit\n3=Kelvin\n4=Rankine\n") #Printa menu de escolha
+try:
+    temp1=int(input("Digite sua escolha da medida de temperatura: ")) #Adiciona o número da escolha a variavel (temp1)
+except ValueError: #Valida se foi digitado números
+    print("Utilize apenas números")
+else:
+    if temp1 <1 or temp1 > 4: # Confere se o valor digitado foi mesmo enter 1 e 4
+        print("Número entre 1 e 4")
+    else:
+        try:
+            valor1=float(input("\nDigite agora sua temperatura: ")) # Tenta pegar o valor da primeira temperatura com numeros inteiros ou nao
+        except ValueError:                                          # e a adiciona na variavel (valor1)
+            print("Utilize apenas números")
+        else:
+            if temp1==1 and valor1<-273.15: #Confere o zero absoluto
+                print("A temperatura deve ser maior que zero absoluto de graus celsius, -273.15")
+
+            if temp1==2 and valor1<-459.67: #Confere o zero absoluto
+                print("Sua temperatura deve ser maior que zero absoluto de graus fahrenheit, -459.67")
+
+            if temp1==3 and valor1<0: #Confere o zero absoluto
+                print("Sua temperatura deve ser maior que zero absoluto de graus kelvin, -0")
+
+            if temp1==4 and valor1<0: #Confere o zero absoluto
+                print("Sua temperatura deve ser maior que o zero absoluto em graus rankine, -0")
+            
+            #Agora solicitar a temperatura para qual sera traduzida 
+            else:
+                print("\nDigite agora o número que corresponde a sua segunda medida de temperatura")
+                print("\n1=Celsius\n2=Fahrenheit\n3=Kelvin\n4=Rankine\n") #Printa menu de escolha
+                try:
+                    temp2=int(input("Digite sua escolha de temperatura na qual será convertida: ")) #Adiciona o número da escolha a variavel (temp2)
+                except ValueError: # Valida se foi digitado numero
+                    print("Utilize apenas números por gentileza")
+                else:
+                    if temp1<1 or temp1>4: #valida se foi entre 1 e 4
+                        print("Utilize um número enter 1 e 4")
+                    else:
+                        if temp1==temp2: #Confere se a escola da primeira medida n foi a mesma da segunda
+                            print("\nNão converterei a temperatura pra mesma medida dela")
+                        
+                        #Tenta pegar o resultado
+                        else:
+                            if temp1==1 and temp2==2: #celsius pra fahrenheit
+                                resultado = 9 * valor1 / 5 + 32
+                                print("\nSua medida em",valor1,"graus celsius equivale à",resultado,"graus fahrenheit")
+                            else:
+                                if temp1 == 2 and temp2 == 1: #fahrenheit pra celsius
+                                    resultado = 5 / 9 * (valor1 - 32)
+                                    print("\nSua medida em",valor1,"graus fahrenheit equivale à",resultado,"graus celsius")
+                                else:
+                                    if temp1 == 1 and temp2 == 3: #celsius pra kelvin
+                                        resultado = temp1 + 273.15
+                                        print("\nSua medida em",valor1,"graus celsius equivale à",resultado,"graus kelvin")
+                                    else:
+                                        if temp1 == 3 and temp2 == 1: #kelvin pra celsiu
+                                            resultado = valor1 - 273.15
+                                            print("\nSua medida em",valor1,"graus kelvin equivale à",resultado,"graus celsius")
+                                        else:
+                                            if temp1 == 1 and temp2 == 4: #celsiu pra rankine
+                                                resultado = (valor1 * 1.8) + 491.67
+                                                print("\nSua medida em",valor1,"graus celsius equivale à",resultado,"graus rankine")
+                                            else:
+                                                if temp1 == 4 and temp2 == 1: #rankine pra celsius
+                                                    resultado = (valor1 - 491.67) / 1.8
+                                                    print("\nSua medida em",valor1,"graus rankine equivale à",resultado,"graus celsius")
+                                                else:
+                                                    if temp1 == 2 and temp2 == 3: #fahrenheit pra kelvin
+                                                        c = 5 / 9 * (valor1 - 32)
+                                                        resultado = celsius + 273.15
+                                                        print("\nSua medida em",valor1,"graus fahrenheit equivale à",resultado,"graus kelvin")
+                                                    else:
+                                                        if temp1==3 and temp2 == 2: #kelvin pra fahrenheit
+                                                            c = valor1 - 273.15
+                                                            resultado = 9 * c / 5 + 32
+                                                            print("\nSua medida em",valor1,"graus kelvin equivale à",resultado,"graus fahrenheit")
+                                                        else:
+                                                            if temp1 == 2 and temp2 == 4: #fahrenheit pra rankine
+                                                                c = 5 / 9 * (valor1 - 32)
+                                                                resultado = (c * 1.8) + 491.67
+                                                                print("\nSua medida em",valor1,"graus fahrenheit equivale à",resultado,"graus rankine")
+                                                            else:
+                                                                if temp1 == 4 and temp2 == 2: #rankine pra fahrenheit
+                                                                    c = (valor1 - 491.67) / 1.8
+                                                                    resultado = 9 * c / 5 + 32
+                                                                    print("\nSua medida em",valor1,"graus rankine equivale à",resultado,"graus fahrenheit")
+                                                                else:
+                                                                    if temp1 == 3 and temp2 == 4:  #kelvin pra rankine
+                                                                        c = valor1 - 273.15
+                                                                        resultado = 1.8 * c + 491.67
+                                                                        print("\nSua medida em",valor1,"graus kelvin equivale à",resultado,"graus rankine")
+                                                                    else:
+                                                                        if temp1 == 4 and temp2 == 3: #rankine pra kelvin
+                                                                            c = (valor1 - 491.67) / 1.8
+                                                                            resultado = c + 273.15
+                                                                            print("\nSua medida em",valor1,"graus rankine equivale à",resultado,"graus kelvin")
+input("\nPressione enter para finalizar o programa") #Pede um valor qualquer a ser digitado(enter solicitado)
+print("\nPrograma finalizado com sucesso! ")

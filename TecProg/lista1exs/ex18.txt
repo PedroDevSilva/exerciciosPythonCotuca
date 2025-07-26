@@ -1,0 +1,13 @@
+print("Calcularei o perímetro de um círculo")
+try:
+    r = float(input("Digite a medida do raio em cm do círculo: "))
+except ValueError:
+    print("Utilize apenas números")
+else: 
+    if r <=0:
+        print("Digite um raio maior que zero")
+    else:
+        p = 2 * 3.1415 * r
+        print("O perímetro do círculos é",p)
+input("\nPressione enter para finalizar o programa")
+print("\nPrograma finalizado com sucesso!")

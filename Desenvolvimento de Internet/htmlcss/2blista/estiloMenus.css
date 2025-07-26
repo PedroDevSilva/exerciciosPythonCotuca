@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: rgb(162, 164, 175);
+}
+
+#menuHorizontal ul {
+  list-style: none;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+#menuHorizontal ul li {
+  position: relative;
+}
+
+#menuHorizontal ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  background-color: #333;
+  transition: background 0.3s;
+}
+
+#menuHorizontal ul li a:hover {
+  background-color: #555;
+}
+
+#menuHorizontal ul li ul.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: #444;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+#menuHorizontal ul li:hover > ul.submenu {
+  display: flex;
+}
+
+#menuHorizontal ul li ul.submenu li a {
+  padding: 10px 15px;
+}
+
+#menuHorizontal ul li ul.submenu li:hover > ul.submenu {
+  left: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+}
+
+#menuVertical ul {
+  list-style: none;
+  background-color: #2d2d2d;
+  width: 220px;
+}
+
+#menuVertical ul li {
+  position: relative;
+}
+
+#menuVertical ul li a {
+  display: block;
+  padding: 12px 15px;
+  color: white;
+  text-decoration: none;
+  background-color: #2d2d2d;
+  transition: background 0.3s;
+}
+
+#menuVertical ul li a:hover {
+  background-color: #444;
+}
+
+#menuVertical ul li ul.submenu {
+  display: none;
+  background-color: #3d3d3d;
+}
+
+#menuVertical ul li:hover > ul.submenu {
+  display: block;
+}
+
+#menuVertical ul li ul.submenu li a {
+  padding-left: 30px;
+}
+
+#menuVertical ul li ul.submenu li:hover > ul.submenu {
+  display: block;
+}
+
+#menuVertical ul li ul.submenu li ul.submenu {
+  padding-left: 20px;
+}

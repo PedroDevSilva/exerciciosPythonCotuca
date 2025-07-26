@@ -1,0 +1,83 @@
+body {
+    background: #cd6666;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+    color: #00FF7F;
+}    
+
+header, footer, article, nav, section {
+    display: block;
+}
+
+#site {
+    text-align: center;
+    margin: 20px auto;
+    width: 800px;
+}
+
+header#topo {
+    height: 70px;
+    background-color: #3CB371;
+    align-content: center;
+}
+
+nav#menu {
+    height: 20px;
+    background: #CD853F;
+    padding: 10px;
+}
+
+#posicaoLista {
+    position: relative;
+    top: -18px;
+}
+
+nav#menu ul li{
+    list-style: none;
+    display: inline;
+    margin: 50px;
+}
+
+section#conteudo {
+    width: 780px;
+    height: 320px;
+    float: left;
+    background-color:#9ACD32;
+    padding: 10px;
+}
+
+section#conteudo header {
+    background: #66CDAA;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color:brown;
+    font-weight: bold;
+}
+
+article#dados {
+    background-color: aquamarine;
+    height: 280px;
+    padding:10px;
+} 
+
+footer {
+    position: absolute;
+    top: 470px;
+    left: 240px;
+    width: 800px;
+    background-color: #DEB887;
+    height: 40px;
+}
+
+.formatacaoFooter { 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;
+    align-content: center;
+    text-align: center;
+    color: black;
+    align: center;
+}

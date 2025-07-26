@@ -1,0 +1,20 @@
+#RANKINE PARA FAHRENHEIT = rankine -> celsius -> fahrenheit
+
+print ("Transformarei sua temperatura rankine e transformarei ela em fahrenheit: ")
+try:
+    r=float(input("Digite a temperatura em graus rankine: "))
+except ValueError:
+    print("Utilize apenas números")
+    input("Pressione enter para finalizar o programa")
+    print("\a")
+else:
+    if r<0:
+        print("A temperatura deve ser  maior que o zero absoluto")
+        input("Pressione enter para finalizar o programa")
+        print("\a")
+    else:
+        c=(r -491.67) / 1.8
+        f= 9 * c / 5 + 32
+        print(r,"graus rankine equivalem à",f,"graus fahrenheit")
+        input("Pressione enter para finalizar o programa")
+        print("\a")

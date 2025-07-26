@@ -1,0 +1,26 @@
+def triangulo(nlinha):
+    linha = 1  # variavel baseadada na linha sendo digitada
+    while linha <= nlinha:  # enquanto linha sendo digitada for menor ou igual ao input do usuario, rodará o codigo abaixo
+        espacos_externos = nlinha - linha  # atribui a variavel expacos externos/espacos antes do primeiro O
+        if linha == 1:  # se atingir a condicao, printará o topo
+            print(" " * espacos_externos + "O" + " " * espacos_externos)  # Topo com espacos
+        elif linha == nlinha:  # se atingir a condicao, printará a base
+            print("O" * (2 * nlinha - 1))  # Base
+        else:
+            espacos_internos = 2 * linha - 3  # Preenchimento
+            print(
+                " " * espacos_externos + "O" + "O" * espacos_internos + "O" + " " * espacos_externos)  # printando o meio do triangulo
+        linha += 1  # acaba com o loop mudando a condicao da linha
+
+print("Digite um número natural e retornarei um triângulo sólido com a altura digitada")
+while True:#loop caso usuario nao digite certo
+    try:
+        nlinha=int(input("Digite um número inteiro natural: "))
+    except ValueError:
+        print("Utilize apenas números inteiros")
+    else:
+        if nlinha <=1 or nlinha >50: #impoe condicao de numero entre 2 e 50
+            print("Utilize um número inteiro maior que 1 e menor que 51")
+        else:
+            break #se digitou certo, continua
+triangulo(nlinha)
