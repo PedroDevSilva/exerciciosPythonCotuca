@@ -22,7 +22,8 @@ avaliacoes = [
     [3, 303, 9.2]
 ]
 
-def notaJogador(nomeJogador):
+'''
+def notaJogador(nomeJogador):#versao com while
     resposta=[]
     i=0
     while i<len(jogadores):
@@ -47,5 +48,9 @@ def notaJogador(nomeJogador):
         j+=1
     return resposta
 
-
 print(notaJogador("Carla"))
+'''
+
+def notaJogador(nomeJogador):
+    resposta=[]
+    
