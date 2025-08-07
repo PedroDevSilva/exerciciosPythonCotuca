@@ -105,7 +105,27 @@ print(novodicionario.items())#retorna todos os itens do dicionario
 print(novodicionario.keys())#retorna só as chaves
 print(novodicionario.values())#retorna só os valores
 '''
+'''
 dicio={"Julia":19,"Rogério":22}
 outrodicio={"Clebinho":21,"Rogério":23}
 dicio.update(outrodicio)#Update podendo fundir dicionário e atualizando-os
 print(dicio)
+idade=dicio.pop("Clebinho")#remove os pares de chv/valor e retorna podendo guardar em uma variável o valor
+print(dicio)
+print(idade)
+ret=dicio.popitem()#remove ultimo tem e guarda na variavel chv/valor como tupla
+print(dicio)
+print(ret)
+'''
+'''
+#Podemos usar o for dentro de uma atribuição de um dicionário, atualizando, neste caso adicionando um 9 para cada valor contido em cada chave
+#Devemos atribuir o número como str antes para não dar erro por tentar concatenar int com str do loop
+contatos={"Pedro":'94335851',"João":'23723732',"Roberta":'82363833'}
+print(contatos)
+contatos={nome:'9'+contatos[nome] for nome in contatos}
+print(contatos)
+'''
+#Caracterizando conteúdo
+#Usando loop com for, podemos definir lugares usando uma regra de formação, por exemplo:
+lista=[0 for i in range(10)]
+print(lista)
